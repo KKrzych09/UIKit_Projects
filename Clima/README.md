@@ -2,7 +2,7 @@
 
 ## My Goal
 
-As a part of The App Brewery's Complete App Development Bootcamp and its next project, I want to tweak the original app and add other functionality, namely - 30 day forecast of searched location.
+As a part of The App Brewery's Complete App Development Bootcamp and its next project, I want to tweak the original app and add other functionality, namely - 8 day forecast of searched location.
 
 
 ## What is already done
