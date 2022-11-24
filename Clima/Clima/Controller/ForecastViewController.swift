@@ -14,9 +14,9 @@ class ForecastViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var forecast: [WeatherModel] = [
-        WeatherModel(conditionId: 212, cityName: "Tokyo", temperature: 13.69),
-        WeatherModel(conditionId: 313, cityName: "Tokyo", temperature: 11.69),
-        WeatherModel(conditionId: 515, cityName: "Tokyo", temperature: 14.69)
+        WeatherModel(conditionId: 212, cityName: "Tokyo", temperature: 13.69, feelsLikeTemp: 12.69),
+        WeatherModel(conditionId: 313, cityName: "Tokyo", temperature: 11.69, feelsLikeTemp: 10.69),
+        WeatherModel(conditionId: 515, cityName: "Tokyo", temperature: 14.69, feelsLikeTemp: 13.69)
     ]
     
     override func viewDidLoad() {
@@ -35,7 +35,7 @@ extension ForecastViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath)
         
-        cell.textLabel?.text = "This is a cell"
+        cell.textLabel?.text = forecast[indexPath.row].temperatureString
         return cell
     }
 }

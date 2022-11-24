@@ -45,7 +45,7 @@ class WeatherViewController: UIViewController {
     }
     
     @IBAction func forecastPressed(_ sender: UIButton) {
-        
+//        self.performSegue(withIdentifier: "goToForecast", sender: self)
     }
     
 }
