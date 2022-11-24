@@ -87,17 +87,50 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBX-xs-glp">
+                                        <rect key="frame" x="229.5" y="309.5" width="144.5" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qaf-3T-MBz">
+                                                <rect key="frame" x="0.0" y="0.0" width="90" height="36"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="Feels like: ">
+                                                        <attributes>
+                                                            <font key="NSFont" metaFont="system" size="20"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" text="20" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zTc-dg-sEe" userLabel="Temperature Label">
+                                                <rect key="frame" x="90" y="0.0" width="27.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbK-hh-z14" userLabel="Temperature Label">
+                                                <rect key="frame" x="117.5" y="0.0" width="12" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkX-Nn-Fyi" userLabel="Temperature Label">
+                                                <rect key="frame" x="129.5" y="0.0" width="15" height="36"/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="London" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mMV-zS-9ID">
-                                        <rect key="frame" x="276" y="309.5" width="98" height="36"/>
+                                        <rect key="frame" x="276" y="355.5" width="98" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ki-V4-KW4">
-                                        <rect key="frame" x="0.0" y="355.5" width="374" height="462.5"/>
+                                        <rect key="frame" x="0.0" y="401.5" width="374" height="416.5"/>
                                         <subviews>
-                                            <button contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMh-3P-6KK">
-                                                <rect key="frame" x="101" y="369" width="173" height="58"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMh-3P-6KK">
+                                                <rect key="frame" x="101" y="321" width="173" height="58"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="oMh-3P-6KK" secondAttribute="height" multiplier="173:58" id="71w-pi-b1g"/>
+                                                </constraints>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule" titleAlignment="center">
@@ -117,11 +150,18 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="oMh-3P-6KK" secondAttribute="bottom" constant="29.5" id="XCb-o3-MIj"/>
+                                            <constraint firstItem="oMh-3P-6KK" firstAttribute="leading" secondItem="1ki-V4-KW4" secondAttribute="leadingMargin" constant="93" id="Yt5-Ba-ff8"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="oMh-3P-6KK" secondAttribute="trailing" constant="92" id="uI9-Ed-doX"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="1ki-V4-KW4" firstAttribute="leading" secondItem="K9q-Zq-Sxz" secondAttribute="leading" id="Gh7-B6-Z9c"/>
                                     <constraint firstAttribute="trailing" secondItem="iyB-lo-zp5" secondAttribute="trailing" id="tgD-uY-F2f"/>
                                     <constraint firstItem="iyB-lo-zp5" firstAttribute="leading" secondItem="K9q-Zq-Sxz" secondAttribute="leading" id="uXq-bk-bb9"/>
+                                    <constraint firstAttribute="trailing" secondItem="1ki-V4-KW4" secondAttribute="trailing" id="vDg-LQ-jWo"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -137,6 +177,8 @@
                     <connections>
                         <outlet property="cityLabel" destination="mMV-zS-9ID" id="9qV-V9-80l"/>
                         <outlet property="conditionImageView" destination="uTN-Z3-ZF1" id="QVF-Tc-1yU"/>
+                        <outlet property="feelsLikeLabel" destination="Qaf-3T-MBz" id="osp-FO-9MY"/>
+                        <outlet property="feelsLikeTempLabel" destination="zTc-dg-sEe" id="CrO-WE-AbQ"/>
                         <outlet property="searchTextField" destination="xeK-uN-ZW4" id="EN3-oB-sfG"/>
                         <outlet property="temperatureLabel" destination="xzk-6J-1Fn" id="Kuh-3M-Ho0"/>
                     </connections>

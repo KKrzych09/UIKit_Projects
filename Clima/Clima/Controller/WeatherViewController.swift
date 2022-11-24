@@ -15,6 +15,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
+    @IBOutlet weak var feelsLikeTempLabel: UILabel!
     
     var weatherManager = WeatherManager()
     let locationManager = CLLocationManager()
@@ -34,6 +36,8 @@ class WeatherViewController: UIViewController {
         
         weatherManager.delegate = self
         searchTextField.delegate = self
+        
+        feelsLikeLabel.font = .italicSystemFont(ofSize: 20)
     }
     
     @IBAction func locationPressed(_ sender: UIButton) {
@@ -93,6 +97,7 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.temperatureLabel.text = weather.temperatureString
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.cityLabel.text = weather.cityName
+            self.feelsLikeTempLabel.text = weather.feelsLikeString
         }
     }
     
