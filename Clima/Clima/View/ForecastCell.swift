@@ -1,8 +1,8 @@
 //
-//  ForecastCell.swift
+//  ForecastCell2.swift
 //  Clima
 //
-//  Created by Kamil Krzych on 24/11/2022.
+//  Created by Kamil Krzych on 25/11/2022.
 //  Copyright © 2022 App Brewery. All rights reserved.
 //
 
@@ -14,7 +14,6 @@ class ForecastCell: UITableViewCell {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var cellConditionImage: UIImageView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
