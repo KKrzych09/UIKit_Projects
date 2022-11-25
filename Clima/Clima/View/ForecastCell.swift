@@ -10,6 +10,12 @@ import UIKit
 
 class ForecastCell: UITableViewCell {
 
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var cellConditionImage: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
