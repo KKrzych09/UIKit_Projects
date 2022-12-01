@@ -201,6 +201,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bMm-kh-x01" id="1hL-3w-dvF"/>
+                                    <outlet property="delegate" destination="bMm-kh-x01" id="PVN-Xj-my2"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tMZ-rG-Wef"/>

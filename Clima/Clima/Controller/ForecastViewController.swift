@@ -14,7 +14,7 @@ class ForecastViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var forecasts = [ForecastModel(conditionId: 313, temperature: 13.59, dateTime: 123123)]
+    var forecasts = [ForecastModel]()
     
     var forecastManager = ForecastManager()
     let locationManager = CLLocationManager()
@@ -61,9 +61,11 @@ extension ForecastViewController: UITableViewDataSource {
 
 extension ForecastViewController: ForecastManagerDelegate {
     func didUpdateForecast(_ forecastManager: ForecastManager, forecast: ForecastModel) {
+        
+        self.forecasts = [forecast]
+        
         DispatchQueue.main.async {
-            //how to populate reusable cell with API data?
-            
+            self.tableView.reloadData()
         }
     }
 
