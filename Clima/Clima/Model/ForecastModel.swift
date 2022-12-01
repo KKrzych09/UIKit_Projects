@@ -12,7 +12,25 @@ import Foundation
 struct ForecastModel {
     let conditionId: Int
     let temperature: Double
-    let dateTime: Int
+    let dateTime: Double
+    
+    var dateTimeString: String {
+        let date = Date(timeIntervalSince1970: dateTime)
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    var dayTimeString: String {
+        let date = Date(timeIntervalSince1970: dateTime)
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "EEEE"
+        
+        return dateFormatter.string(from: date)
+    }
     
     var temperatureString: String {
         return String(format: "%.1f", temperature)

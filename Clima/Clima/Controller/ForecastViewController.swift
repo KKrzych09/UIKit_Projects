@@ -48,8 +48,8 @@ extension ForecastViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! ForecastCell
         
-        cell.dayLabel.text = String(forecasts[indexPath.row].dateTime)
-        cell.dateLabel.text = String(forecasts[indexPath.row].dateTime)
+        cell.dayLabel.text = forecasts[indexPath.row].dayTimeString
+        cell.dateLabel.text = forecasts[indexPath.row].dateTimeString
         cell.tempLabel.text = forecasts[indexPath.row].temperatureString
         cell.cellConditionImage.image = UIImage(systemName: forecasts[indexPath.row].conditionName)
         return cell
