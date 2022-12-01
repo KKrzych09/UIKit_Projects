@@ -61,7 +61,7 @@ struct ForecastManager {
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
             let id = decodedData.list[0].weather[0].id
-            let temp = decodedData.list[0].main[0].temp
+            let temp = decodedData.list[0].main.temp
             let dt = decodedData.list[0].dt
             
             let forecast = ForecastModel(conditionId: id, temperature: temp, dateTime: dt)

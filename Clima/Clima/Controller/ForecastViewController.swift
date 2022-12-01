@@ -63,6 +63,7 @@ extension ForecastViewController: ForecastManagerDelegate {
     func didUpdateForecast(_ forecastManager: ForecastManager, forecast: ForecastModel) {
         DispatchQueue.main.async {
             //how to populate reusable cell with API data?
+            
         }
     }
 
@@ -73,7 +74,7 @@ extension ForecastViewController: ForecastManagerDelegate {
 
 
 
-MARK: - CLLocationManagerDelegate
+//MARK: - CLLocationManagerDelegate
 
 extension ForecastViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

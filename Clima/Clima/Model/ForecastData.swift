@@ -14,7 +14,7 @@ struct ForecastData: Codable {
 
 struct List: Codable {
     let dt: Int
-    let main: [ForecastMain]
+    let main: ForecastMain
     let weather: [ForecastWeather]
 }
 
@@ -24,5 +24,4 @@ struct ForecastMain: Codable {
 
 struct ForecastWeather: Codable {
     let id: Int
-    let description: String
 }
