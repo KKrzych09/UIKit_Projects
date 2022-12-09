@@ -11,7 +11,7 @@ import UIKit
 import CoreLocation
 
 protocol ForecastManagerDelegate {
-    func didUpdateForecast(_ forecastManager: ForecastManager, forecast: ForecastModel)
+    func didUpdateForecast(_ forecastManager: ForecastManager, forecast: [ForecastModel])
     func didFailWithError(error: Error)
 }
 
@@ -56,16 +56,26 @@ struct ForecastManager {
         }
     }
     
-    func parseJSON(_ forecastData: Data) -> ForecastModel? {
+    func parseJSON(_ forecastData: Data) -> [ForecastModel]? {
         let decoder = JSONDecoder()
         do {
             let decodedData = try decoder.decode(ForecastData.self, from: forecastData)
-            let id = decodedData.list[0].weather[0].id
-            let temp = decodedData.list[0].main.temp
-            let dt = decodedData.list[0].dt
             
-            let forecast = ForecastModel(conditionId: id, temperature: temp, dateTime: dt)
-            return forecast
+            var data = [ForecastModel]()
+            
+            var id = 0
+            var temp = 0.0
+            var dt = 0.0
+            
+            for element in decodedData.list {
+                id = element.weather[0].id
+                temp = element.main.temp
+                dt = element.dt
+                data.append(ForecastModel(conditionId: id, temperature: temp, dateTime: dt))
+            }
+            
+            return data
+            
         } catch {
             delegate?.didFailWithError(error: error)
             return nil

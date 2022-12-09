@@ -60,9 +60,10 @@ extension ForecastViewController: UITableViewDataSource {
 //MARK: - ForecastManagerDelegate
 
 extension ForecastViewController: ForecastManagerDelegate {
-    func didUpdateForecast(_ forecastManager: ForecastManager, forecast: ForecastModel) {
+    func didUpdateForecast(_ forecastManager: ForecastManager, forecast: [ForecastModel]) {
         
-        self.forecasts = [forecast]
+        self.forecasts = forecast
+        
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
