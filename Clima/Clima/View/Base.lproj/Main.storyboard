@@ -147,7 +147,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="forecastPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4oX-WI-MIy"/>
-                                                    <segue destination="bMm-kh-x01" kind="show" identifier="goToForecast" id="JPt-eq-5xr"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -183,6 +182,7 @@
                         <outlet property="feelsLikeTempLabel" destination="zTc-dg-sEe" id="CrO-WE-AbQ"/>
                         <outlet property="searchTextField" destination="xeK-uN-ZW4" id="EN3-oB-sfG"/>
                         <outlet property="temperatureLabel" destination="xzk-6J-1Fn" id="Kuh-3M-Ho0"/>
+                        <segue destination="bMm-kh-x01" kind="show" identifier="goToForecast" id="jsB-Yu-v0x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -227,6 +227,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mS8-jM-QXz">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemMintColor"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.66378659009999996" green="0.87607038020000005" blue="0.760771215" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -19,7 +19,10 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var feelsLikeTempLabel: UILabel!
     
     var weatherManager = WeatherManager()
+    var forecastManager = ForecastManager()
     let locationManager = CLLocationManager()
+    
+    var givenCity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +45,19 @@ class WeatherViewController: UIViewController {
     
     @IBAction func locationPressed(_ sender: UIButton) {
         locationManager.requestLocation()
+        givenCity = ""
     }
     
     @IBAction func forecastPressed(_ sender: UIButton) {
-//        self.performSegue(withIdentifier: "goToForecast", sender: self)
+        performSegue(withIdentifier: "goToForecast", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToForecast" {
+            let destinationVC = segue.destination as! ForecastViewController
+            
+            destinationVC.receivedCity = givenCity
+        }
     }
     
 }
@@ -78,10 +90,11 @@ extension WeatherViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        /* Inside that functione the code will be triggerd as soon as any of the text fields on the screen are done with
+        /* Inside that function the code will be triggerd as soon as any of the text fields on the screen are done with
         editing */
         
         if let city = searchTextField.text {
+            self.givenCity = city
             weatherManager.fetchWeather(cityName: city)
         }
         

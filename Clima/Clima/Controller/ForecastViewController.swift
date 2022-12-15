@@ -19,13 +19,14 @@ class ForecastViewController: UIViewController {
     var forecastManager = ForecastManager()
     let locationManager = CLLocationManager()
     
+    var receivedCity = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
         locationManager.requestLocation()
-
         
         forecastManager.delegate = self
         
@@ -85,7 +86,12 @@ extension ForecastViewController: CLLocationManagerDelegate {
             locationManager.stopUpdatingLocation()
             let lat = location.coordinate.latitude
             let lon = location.coordinate.longitude
-            forecastManager.fetchForecast(latitude: lat, longitude: lon)
+            if self.receivedCity != "" {
+                forecastManager.fetchForecast(cityName: self.receivedCity)
+                self.receivedCity = ""
+            } else {
+                forecastManager.fetchForecast(latitude: lat, longitude: lon)
+            }
         }
     }
 

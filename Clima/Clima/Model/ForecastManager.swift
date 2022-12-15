@@ -63,9 +63,9 @@ struct ForecastManager {
             
             var data = [ForecastModel]()
             
-            var id = 0
-            var temp = 0.0
-            var dt = 0.0
+            var id: Int
+            var temp: Double
+            var dt: Double
             
             for element in decodedData.list {
                 id = element.weather[0].id
