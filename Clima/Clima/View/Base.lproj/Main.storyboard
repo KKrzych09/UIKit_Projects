@@ -197,18 +197,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TXo-kE-IlV">
-                                <rect key="frame" x="0.0" y="194" width="415" height="702"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TXo-kE-IlV">
+                                <rect key="frame" x="0.0" y="194" width="414" height="702"/>
                                 <color key="backgroundColor" red="0.39382922650000002" green="0.65071552990000003" blue="0.67201370000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="bMm-kh-x01" id="1hL-3w-dvF"/>
                                     <outlet property="delegate" destination="bMm-kh-x01" id="PVN-Xj-my2"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="San Francisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ae-xU-fHO">
-                                <rect key="frame" x="20" y="135" width="374" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Francisco" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ae-xU-fHO">
+                                <rect key="frame" x="10" y="135" width="394" height="51"/>
                                 <color key="backgroundColor" red="0.39382922650000002" green="0.65071552990000003" blue="0.67201370000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                 <nil key="textColor"/>
@@ -217,6 +215,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tMZ-rG-Wef"/>
                         <color key="backgroundColor" red="0.39382922650000002" green="0.65071552990000003" blue="0.67201370000000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tMZ-rG-Wef" firstAttribute="trailing" secondItem="6Ae-xU-fHO" secondAttribute="trailing" constant="10" id="5gY-UC-ew9"/>
+                            <constraint firstItem="TXo-kE-IlV" firstAttribute="centerX" secondItem="6Ae-xU-fHO" secondAttribute="centerX" id="B5R-8t-AVh"/>
+                            <constraint firstItem="6Ae-xU-fHO" firstAttribute="top" secondItem="eMR-6h-9ib" secondAttribute="top" constant="135" id="SjR-ip-eBQ"/>
+                            <constraint firstItem="6Ae-xU-fHO" firstAttribute="leading" secondItem="tMZ-rG-Wef" secondAttribute="leading" constant="10" id="TMN-8a-wex"/>
+                            <constraint firstItem="TXo-kE-IlV" firstAttribute="top" secondItem="6Ae-xU-fHO" secondAttribute="bottom" constant="8" symbolic="YES" id="cFJ-2s-Xsn"/>
+                            <constraint firstAttribute="bottom" secondItem="TXo-kE-IlV" secondAttribute="bottom" id="oth-Nv-hQB"/>
+                            <constraint firstItem="TXo-kE-IlV" firstAttribute="leading" secondItem="eMR-6h-9ib" secondAttribute="leading" id="wOT-i8-GK6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="5 day forecast" id="wn8-eP-9M3"/>
                     <connections>
