@@ -23,6 +23,7 @@ class WeatherViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     var givenCity = ""
+    var locationCity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,7 @@ class WeatherViewController: UIViewController {
             let destinationVC = segue.destination as! ForecastViewController
             
             destinationVC.receivedCity = givenCity
+            destinationVC.locationCity = locationCity
         }
     }
     
@@ -111,6 +113,7 @@ extension WeatherViewController: WeatherManagerDelegate {
             self.conditionImageView.image = UIImage(systemName: weather.conditionName)
             self.cityLabel.text = weather.cityName
             self.feelsLikeTempLabel.text = weather.feelsLikeString
+            self.locationCity = weather.cityName
         }
     }
     

@@ -13,6 +13,7 @@ import CoreLocation
 class ForecastViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cityLabel: UILabel!
     
     var forecasts = [ForecastModel]()
     
@@ -20,6 +21,7 @@ class ForecastViewController: UIViewController {
     let locationManager = CLLocationManager()
     
     var receivedCity = ""
+    var locationCity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,10 @@ class ForecastViewController: UIViewController {
         forecastManager.delegate = self
         
         tableView.dataSource = self
-        
+   
         tableView.register(UINib(nibName: "ForecastCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        
+        cityLabel.text = locationCity
        
     }
 }
@@ -48,6 +52,9 @@ extension ForecastViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! ForecastCell
+        
+        // Placing forecast cells in the middle of the table
+        tableView.contentInset = UIEdgeInsets(top: ((tableView.bounds.height / 10) - (cell.bounds.height / 2)), left: 0, bottom: 0, right: 0)
         
         cell.dayLabel.text = forecasts[indexPath.row].dayTimeString
         cell.dateLabel.text = forecasts[indexPath.row].dateTimeString
