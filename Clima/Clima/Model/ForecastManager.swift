@@ -66,12 +66,55 @@ struct ForecastManager {
             var id: Int
             var temp: Double
             var dt: Double
+            var dtTxt: String
             
-            for element in decodedData.list {
-                id = element.weather[0].id
-                temp = element.main.temp
-                dt = element.dt
-                data.append(ForecastModel(conditionId: id, temperature: temp, dateTime: dt))
+            // Adding to list of forecasts
+            for model in decodedData.list {
+                id = model.weather[0].id
+                temp = model.main.temp
+                dt = model.dt
+                dtTxt = model.dt_txt
+                data.append(ForecastModel(conditionId: id, temperature: temp, dateTime: dt, dateTxt: dtTxt))
+            }
+            
+            // Array manipulation
+            
+            
+            // Removing unnecessary data from forecast array
+            for day in data {
+                
+                // Removing today's day from forecast array
+                let currentDay = Date()
+                
+                let dateformatter = DateFormatter()
+                dateformatter.dateFormat = "EEEE"
+                
+                let today = dateformatter.string(from: currentDay)
+                
+                if today == day.dayTimeString {
+                    data.remove(at: data.firstIndex(of: day)!)
+                }
+            }
+
+            
+            let result = data
+            
+            for element in data {
+                // Removing unnecessary hours from forecast array
+                let forecastHour = element.hourTimeString
+                
+//                let forecastDay = element.dayTimeString
+//                let forecastTemp = element.temperatureString
+//
+//                print("Hour: \(forecastHour), Day: \(forecastDay), Temperature: \(forecastTemp)")
+                
+                if forecastHour != "15:00:00" {
+                    data.remove(at: data.firstIndex(of: element)!)
+                    
+                    if data.count == 4 {
+                        data.append(result.last!)
+                    }
+                }
             }
             
             return data

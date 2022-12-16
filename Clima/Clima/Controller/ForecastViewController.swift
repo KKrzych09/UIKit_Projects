@@ -64,7 +64,7 @@ extension ForecastViewController: ForecastManagerDelegate {
     func didUpdateForecast(_ forecastManager: ForecastManager, forecast: [ForecastModel]) {
         
         self.forecasts = forecast
-        
+//        print(self.forecasts)
         
         DispatchQueue.main.async {
             self.tableView.reloadData()
