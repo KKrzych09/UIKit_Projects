@@ -103,11 +103,6 @@ struct ForecastManager {
                 // Removing unnecessary hours from forecast array
                 let forecastHour = element.hourTimeString
                 
-//                let forecastDay = element.dayTimeString
-//                let forecastTemp = element.temperatureString
-//
-//                print("Hour: \(forecastHour), Day: \(forecastDay), Temperature: \(forecastTemp)")
-                
                 if forecastHour != "15:00:00" {
                     data.remove(at: data.firstIndex(of: element)!)
                     
