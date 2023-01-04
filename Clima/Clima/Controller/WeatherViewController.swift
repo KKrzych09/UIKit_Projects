@@ -42,6 +42,7 @@ class WeatherViewController: UIViewController {
         searchTextField.delegate = self
         
         feelsLikeLabel.font = .italicSystemFont(ofSize: 20)
+        feelsLikeLabel.textColor = .black
     }
     
     @IBAction func locationPressed(_ sender: UIButton) {
