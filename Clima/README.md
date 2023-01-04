@@ -2,10 +2,11 @@
 
 ## Screenshots
 
-![plot](./Screens/ByName.png)
-![plot](./Screens/ByNameForecast.png)
-![plot](./Screens/Location.png)
-![plot](./Screens/LocationForecast.png)
+<img src="https://github.com/KKrzych09/UIKit_Projects/blob/main/Clima/Screens/ByName.png" height="600" width="280">
+<img src="https://github.com/KKrzych09/UIKit_Projects/blob/main/Clima/Screens/ByNameForecast.png" height="600" width="280">
+<img src="https://github.com/KKrzych09/UIKit_Projects/blob/main/Clima/Screens/Location.png" height="600" width="280">
+<img src="https://github.com/KKrzych09/UIKit_Projects/blob/main/Clima/Screens/LocationForecast.png" height="600" width="280">
+
 
 
 ## My Goal
