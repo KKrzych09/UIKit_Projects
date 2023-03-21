@@ -13,6 +13,8 @@
 		8E23751A29CA4D07008CEECE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E23751829CA4D07008CEECE /* Main.storyboard */; };
 		8E23751C29CA4D0A008CEECE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E23751B29CA4D0A008CEECE /* Assets.xcassets */; };
 		8E23751F29CA4D0A008CEECE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E23751D29CA4D0A008CEECE /* LaunchScreen.storyboard */; };
+		8E23752729CA5024008CEECE /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E23752629CA5024008CEECE /* CustomTableViewCell.swift */; };
+		8EFFBA2E29CA554B00D17EF5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFFBA2D29CA554B00D17EF5 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		8E23751B29CA4D0A008CEECE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E23751E29CA4D0A008CEECE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8E23752029CA4D0A008CEECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E23752629CA5024008CEECE /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		8EFFBA2D29CA554B00D17EF5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				8E23751B29CA4D0A008CEECE /* Assets.xcassets */,
 				8E23751D29CA4D0A008CEECE /* LaunchScreen.storyboard */,
 				8E23752029CA4D0A008CEECE /* Info.plist */,
+				8E23752629CA5024008CEECE /* CustomTableViewCell.swift */,
+				8EFFBA2D29CA554B00D17EF5 /* Model.swift */,
 			);
 			path = musicBuddy;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFFBA2E29CA554B00D17EF5 /* Model.swift in Sources */,
 				8E23751729CA4D07008CEECE /* ViewController.swift in Sources */,
 				8E23751329CA4D07008CEECE /* AppDelegate.swift in Sources */,
+				8E23752729CA5024008CEECE /* CustomTableViewCell.swift in Sources */,
 				8E23751529CA4D07008CEECE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
