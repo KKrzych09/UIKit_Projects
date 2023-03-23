@@ -51,11 +51,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHh-5X-pL2">
+                                <rect key="frame" x="134" y="82" width="146" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Show/Hide table"/>
+                                <connections>
+                                    <action selector="showTableView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DgJ-zq-qVe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="showTableViewButton" destination="QHh-5X-pL2" id="lzS-vM-xgD"/>
                         <outlet property="tableView" destination="8WF-G2-fl9" id="osw-hh-eaA"/>
                     </connections>
                 </viewController>

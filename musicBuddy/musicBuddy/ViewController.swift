@@ -17,12 +17,42 @@ class ViewController: UIViewController, UITableViewDataSource {
         DataModel(title: "Item 5", subtitle: "Subtitle 5"),
     ]
     
+    @IBAction func showTableView(_ sender: UIButton) {
+        tableView.isHidden.toggle()
+        
+        // fetch data and reload table view
+        //fetchData()
+        tableView.reloadData()
+    }
+    
+    
+    @IBOutlet weak var showTableViewButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        tableView.isHidden = true
+        
         tableView.dataSource = self
+        
+        // Button
+        showTableViewButton.setTitle("Show/Hide Table View", for: .normal)
+        
+        // Add button to the view
+        view.addSubview(showTableViewButton)
+        
+        // Add Auto Layout constraints to center button horizontally
+        showTableViewButton.translatesAutoresizingMaskIntoConstraints = false
+        let constraints = [
+            showTableViewButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            showTableViewButton.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            showTableViewButton.heightAnchor.constraint(equalToConstant: 50),
+            showTableViewButton.widthAnchor.constraint(equalToConstant: 200)
+        ]
+
+        NSLayoutConstraint.activate(constraints)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
