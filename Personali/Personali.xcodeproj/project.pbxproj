@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E30592229D4DBCC001F1525 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30592129D4DBCC001F1525 /* Model.swift */; };
+		8E30592429D4DC61001F1525 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30592329D4DC61001F1525 /* PeopleViewModel.swift */; };
+		8E30592629D4E1DF001F1525 /* PersonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E30592529D4E1DF001F1525 /* PersonCollectionViewCell.swift */; };
 		8E6861D029D38ABD008638BA /* PersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E6861CF29D38ABD008638BA /* PersonView.swift */; };
 		8EBD350F29CE203D0091E1E1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD350E29CE203D0091E1E1 /* AppDelegate.swift */; };
 		8EBD351129CE203D0091E1E1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBD351029CE203D0091E1E1 /* SceneDelegate.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E30592129D4DBCC001F1525 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		8E30592329D4DC61001F1525 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		8E30592529D4E1DF001F1525 /* PersonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonCollectionViewCell.swift; sourceTree = "<group>"; };
 		8E6861CF29D38ABD008638BA /* PersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonView.swift; sourceTree = "<group>"; };
 		8EBD350B29CE203D0091E1E1 /* Personali.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Personali.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EBD350E29CE203D0091E1E1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,7 @@
 		8EBD350D29CE203D0091E1E1 /* Personali */ = {
 			isa = PBXGroup;
 			children = (
+				8E30592529D4E1DF001F1525 /* PersonCollectionViewCell.swift */,
 				8EBD350E29CE203D0091E1E1 /* AppDelegate.swift */,
 				8EBD351029CE203D0091E1E1 /* SceneDelegate.swift */,
 				8EBD351229CE203D0091E1E1 /* PeopleViewController.swift */,
@@ -63,6 +70,8 @@
 				8EBD351729CE20410091E1E1 /* Assets.xcassets */,
 				8EBD351929CE20410091E1E1 /* LaunchScreen.storyboard */,
 				8EBD351C29CE20410091E1E1 /* Info.plist */,
+				8E30592129D4DBCC001F1525 /* Model.swift */,
+				8E30592329D4DC61001F1525 /* PeopleViewModel.swift */,
 			);
 			path = Personali;
 			sourceTree = "<group>";
@@ -137,9 +146,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E30592229D4DBCC001F1525 /* Model.swift in Sources */,
+				8E30592429D4DC61001F1525 /* PeopleViewModel.swift in Sources */,
 				8EBD351329CE203D0091E1E1 /* PeopleViewController.swift in Sources */,
 				8E6861D029D38ABD008638BA /* PersonView.swift in Sources */,
 				8EBD350F29CE203D0091E1E1 /* AppDelegate.swift in Sources */,
+				8E30592629D4E1DF001F1525 /* PersonCollectionViewCell.swift in Sources */,
 				8EBD351129CE203D0091E1E1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

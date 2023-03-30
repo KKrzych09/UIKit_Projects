@@ -9,11 +9,17 @@ import UIKit
 
 class PeopleViewController: UIViewController {
     
-    private lazy var personVw: PersonView = {
+    private lazy var cv: UICollectionView = {
         
-        let vw = PersonView { [weak self] in
-            self?.sayHello()
-        }
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: UIScreen.main.bounds.width, height: 130)
+        
+        let vw = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        
+        // Registering cell to my view
+        vw.register(PersonCollectionViewCell.self, forCellWithReuseIdentifier: "PersonCollectionViewCell")
+        
+        vw.translatesAutoresizingMaskIntoConstraints = false
         return vw
     }()
 
@@ -31,27 +37,14 @@ private extension PeopleViewController {
     func setup() {
         self.view.backgroundColor = .white
         
-        //Actually adding subscribeBtn to the screen
-        self.view.addSubview(personVw)
+        self.view.addSubview(cv)
         
-        
-        //AutoLayout managing my views
-         
-        // AutoLayout properties to manage location of my views
         NSLayoutConstraint.activate([
-            personVw.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            
-            // Setting width to the whole screen
-                
-                // Pushing 8 from the leading and trailing edge (like padding)
-            personVw.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8),
-            personVw.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8),
-
+            cv.topAnchor.constraint(equalTo: view.topAnchor),
+            cv.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            cv.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            cv.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
-    }
-    
-    func sayHello() {
-        print("Hiya")
     }
 }
 
