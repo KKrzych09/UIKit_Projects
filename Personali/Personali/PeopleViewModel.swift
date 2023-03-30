@@ -7,11 +7,20 @@
 
 import Foundation
 
+protocol PeopleViewModelDelegate: AnyObject {
+    func didFinish()
+    func didFail(error: Error)
+}
 
 class PeopleViewModel {
     
-    private var people = [PersonResponse]()
+    private(set) var people = [PersonResponse]()
     
+    weak var delegate: PeopleViewModelDelegate?
+    
+    
+    // It'll ensure that any UI updates that I get placed onto the main thread, but any kind of processing is still on the background thread
+    @MainActor
     func getUsers() {
         
         Task { [weak self] in
@@ -26,9 +35,10 @@ class PeopleViewModel {
                 jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
                 
                 self?.people = try jsonDecoder.decode(UserResponse.self, from: data).data
+                self?.delegate?.didFinish()
                     
             } catch {
-                print(error)
+                self?.delegate?.didFail(error: error)
             }
             
         }
