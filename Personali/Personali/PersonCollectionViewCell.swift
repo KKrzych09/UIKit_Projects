@@ -7,9 +7,30 @@
 
 import UIKit
 
+protocol PersonCollectionViewCellDelegate: AnyObject {
+    func didTapSubscribe()
+}
+
 class PersonCollectionViewCell: UICollectionViewCell {
     
     private var vw: PersonView?
+    
+    weak var delegate: PersonCollectionViewCellDelegate?
+    
+    var item: PersonResponse? {
+        
+        // Whenever I assign a value to this variable, this below will trigger
+        didSet {
+            
+            guard let firstName = item?.firstName,
+                  let lastName = item?.lastName,
+                  let email = item?.email else {
+                return
+            }
+            
+            vw?.set(name: "\(firstName) \(lastName)", email: email)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,8 +48,8 @@ private extension PersonCollectionViewCell {
     func setup() {
         guard vw == nil else { return }
         
-        vw = PersonView {
-            
+        vw = PersonView { [weak self] in
+            self?.delegate?.didTapSubscribe()
         }
         
         self.contentView.addSubview(vw!)

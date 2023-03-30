@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class PeopleViewController: UIViewController {
     
@@ -22,7 +23,6 @@ class PeopleViewController: UIViewController {
         vw.register(PersonCollectionViewCell.self, forCellWithReuseIdentifier: "PersonCollectionViewCell")
         
         vw.dataSource = self
-        vw.delegate
         vw.translatesAutoresizingMaskIntoConstraints = false
         return vw
     }()
@@ -37,6 +37,17 @@ class PeopleViewController: UIViewController {
     }
 }
 
+extension PeopleViewController: PersonCollectionViewCellDelegate {
+    func didTapSubscribe() {
+        
+        let url = URL(string: "https://www.youtube.com/")!
+        let vc = SFSafariViewController(url: url)
+        
+        vc.modalPresentationStyle = .formSheet
+        self.present(vc, animated: true)
+    }
+}
+
 extension PeopleViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -45,8 +56,11 @@ extension PeopleViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        let item = vm.people[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PersonCollectionViewCell", for: indexPath) as! PersonCollectionViewCell
         
+        cell.delegate = self
+        cell.item = item
         return cell
     }
 }
@@ -66,6 +80,10 @@ extension PeopleViewController: PeopleViewModelDelegate {
 
 private extension PeopleViewController {
     func setup() {
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.title = "People"
+        
         self.view.backgroundColor = .white
         
         self.view.addSubview(cv)
